@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Form(){
 
-  const handleChange = (e) => {
+  // state del componente        como va a inicial el state
+  // search = state, saveSearch = this.setState({})
+  const [ search , saveSearch ] = useState({
+    city: '',
+    country: ''
+  })
 
+  const handleChange = (e) => {
+    e.preventDefault();
+
+
+    // setState
+    saveSearch({
+      ...search,  // copia del state actual, asi no se pierde la referencia del otro campo
+      [e.target.name]: e.target.value
+    })
+
+    console.log(search);
   }
 
   return (
