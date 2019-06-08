@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.header-component {
+  background-color: #82ccdd;
+}
+
 nav .brand-logo {
   display: block;
   text-align: center;
