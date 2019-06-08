@@ -1,29 +1,31 @@
 import React, { useState } from 'react';
 
-function Form(){
+function Form({ consultData }){
 
   // state del componente        como va a inicial el state
-  // search = state, saveSearch = this.setState({})
-  const [ search , saveSearch ] = useState({
+  // search = state, setSearch = this.setState({})
+  const [ search , setSearch ] = useState({
     city: '',
     country: ''
   })
 
   const handleChange = (e) => {
-    e.preventDefault();
-
-
     // setState
-    saveSearch({
+    setSearch({
       ...search,  // copia del state actual, asi no se pierde la referencia del otro campo
       [e.target.name]: e.target.value
     })
+  }
 
-    console.log(search);
+  const consultWeather = (e) => {
+    e.preventDefault();
+
+    // pasar hacia el componente principal la busqueda del usuario
+    consultData(search);
   }
 
   return (
-    <form>
+    <form onSubmit={consultWeather}>
       <div className="input-field col s12">
         <label htmlFor="city">Ciudad: </label>
         <input type="text" name="city" id="city" onChange={handleChange} />
