@@ -12,12 +12,12 @@ function Weather({result}){
   return (
     <div className="card-panel white col s12">
       <div>
-        <h2>El clima de {name} es:</h2>
-        <p className="temperatura">
+        <h2 className="temperature-info">El clima de {name} es:</h2>
+        <p className="temperature">
           {parseInt(main.temp - kelvin, 10)} &#x2103;
         </p>
-        <p>Temperatura maxima: {parseInt(main.temp_max - kelvin, 10)} &#x2103;</p>
-        <p>Temperatura minima: {parseInt(main.temp_min - kelvin, 10)} &#x2103;</p>
+        <p className="temperature-info">Temperatura maxima: {parseInt(main.temp_max - kelvin, 10)} &#x2103;</p>
+        <p className="temperature-info">Temperatura minima: {parseInt(main.temp_min - kelvin, 10)} &#x2103;</p>
       </div>
     </div>
   )
