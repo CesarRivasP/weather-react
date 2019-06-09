@@ -85,8 +85,18 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   font-size: 1.4rem;
 }
 
-.temperatura {
-  font-size: 4rem!important
+.temperature-info {
+  font-family: 'Roboto', sans-serif;
+  color: #424242;
+  padding-bottom: 10px;
+}
+
+.temperature {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 4rem!important;
+  color: #424242;
 }
 
 .temperatura span {
